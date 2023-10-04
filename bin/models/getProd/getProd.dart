@@ -17,4 +17,6 @@ class GetProd with _$GetProd {
   }) = _GetProd;
 
   factory GetProd.fromJson(Map<String, dynamic> json) => _$GetProdFromJson(json);
+
+  
 }

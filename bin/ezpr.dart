@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:ezpr/ezpr.dart' as ezpr;
 import 'models/getProd/getProd.dart';
 
 void main(List<String> arguments) async {
@@ -7,6 +6,10 @@ void main(List<String> arguments) async {
   String url = 'https: //dummyjson.com/products';
   var response = await httpClient.get(url);
   GetProd getProd = GetProd.fromJson(response.data);
+  int count = 0;
+  for (var el in getProd.p) {
+    count += el.id;
+  }
 
-  print(getProd);
+  print(count);
 }
